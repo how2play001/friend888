@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🔥 มาเล่นกัน เรามีแต่ให้</title>
+   <style>
+ .button {
+  background-color: #FF0000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 50px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+}
+  </style>
+<style>
+      .image {
+        background-image: url("https://www.slotcat888.com/assets/img/promotion/pro888-recommend.jpg");
+        background-color: #cccccc;
+        height: 380px;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+      }
+    </style>
+
+
+</head>
+   
+<body>
+  <button id="btnShare" class="button" onclick="sendShare()">แชร์เลย</button>
+<div class = image ></div>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    async function sendShare() {
+      const result = await liff.shareTargetPicker([
+      {
+   "type": "template",
+    "altText": "🔥 โปรไฟลุก 20% ทุกยอดฝาก",
+    "template": {
+      "columns": [
+
+              {
+          "action": {
+            "uri": "https://www.slotcat888.com?openExternalBrowser=1",
+            "type": "uri" 
+          },
+          "imageUrl": "https://www.slotcat888.com/assets/img/promotion/pro20888new.jpg"
+        },
+ {
+          "action": {
+            "uri": "https://slotcat888.com/?openExternalBrowser=1",
+            "type": "uri"
+           
+          },
+          "imageUrl": "https://www.slotcat888.com/assets/img/promotion/bad-5-day.jpg"
+        },
+
+{
+          "action": {
+            "uri": "https://slotcat888.com/?openExternalBrowser=1",
+            "type": "uri"
+          
+          },
+          "imageUrl": "https://www.slotcat888.com/assets/img/promotion/pro5888.jpg"
+        },
+             {
+          "imageUrl": "https://www.slotcat888.com/assets/img/promotion/pro888-recommend.jpg",
+          "action": {
+           
+            "type": "uri",
+            "uri": "https://slotcat888.com/?openExternalBrowser=1"
+          }
+        },
+
+        {
+          "imageUrl": "https://www.slotcat888.com/assets/img/promotion/pro-7-300.jpg",
+          "action": {
+            "type": "uri",
+           
+            "uri": "https://slotcat888.com/?openExternalBrowser=1"
+          }
+        }
+
+                ],
+      "type": "image_carousel"
+    }
+   },
+{
+  "type": "flex",
+  "altText": "🔥เล่นก่อนรวยก่อนไม่รอแล้วน๊าา",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "💛 โปรสำหรับผู้เล่นใหม่ 💛",
+          "size": "lg",
+          "align": "center",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "text": "❌ โปรดีๆที่ไม่ควรพลาด ❌",
+          "margin": "lg",
+          "size": "md",
+"align": "center",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "text": "❤️‍🔥 ฝาก 50 รับเพิ่ม 50",
+          "margin": "md"
+        },
+        {
+          "type": "text",
+          "text": "❤️‍🔥 ไม่ต้องทำยอดเทิร์น",
+          "margin": "sm"
+        },
+        {
+          "type": "text",
+          "text": "❤️‍🔥 คุ้มกว่านี้ไม่มีอีกแล้ว",
+          "margin": "sm"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://www.slotcat888.com/assets/img/promotion/de-50-free-50.jpg",
+      "align": "center",
+      "size": "full",
+      "aspectRatio": "1:1"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "ติดต่อแอดมิน",
+            "uri": "https://lin.ee/AbYeCvJ"
+          },
+          "color": "#DC143C",
+          "style": "primary"
+        },
+  {
+"type": "button",
+          "action": {
+            "type": "uri",
+            "label": "แชร์เลย",
+            "uri": "https://liff.line.me/1656561547-VdyWrwr9"
+          },
+          "color": "#47C80B",
+          "style": "primary"
+        }
+      ]
+    }
+  }
+}
+  ])
+      if (result) {
+        liff.closeWindow()
+      } 
+else {
+        liff.closeWindow()
+
+        if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+          liff.closeWindow()
+        }
+      }
+    }
+    function logOut() {
+      liff.logout()
+      window.location.reload()
+    }
+ async function main() {
+      await liff.init({ liffId: "1656561547-VdyWrwr9" })
+      if (liff.isLoggedIn()) {
+        document.getElementById("btnShare").style.display = "block"
+        if (!liff.isInClient()) {
+          document.getElementById("btnLogOut").style.display = "none"
+        }
+      } else {
+        document.getElementById("btnLogin").style.display = "none"
+      }
+    }
+
+    main()
+  </script>
+</body>
+</html
